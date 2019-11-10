@@ -66,12 +66,6 @@ when trying to restore a file, if its inode is already in use, there are two opt
 to restore previously had other hardlinks (and hence its inode never really got invalidated), _or_ its
 inode has been re-allocated to a completely new file. Since there is no way to tell between these 2
 possibilities, recovery in this case should not be attempted.
-BONUS: Implement an additional "-r" flag (after the disk image argument), which allows restoring
-directories as well. In this case, you will have to recursively restore all the contents of the directory
-specified in the last argument. If "-r" is used with a regular file or link, then it should be ignored (the
-restore operation should be carried out as if the flag had not been entered). If you decide to do the
-bonus, make sure first that your ext2_restore works, then create a new copy of it and rename it to
-ext2_restore_bonus.c, and implement the additional functionality in this separate source file.
 
 - ext2_checker: This program takes only one command line argument: the name of an ext2
 formatted virtual disk. The program should implement a lightweight file system checker, which
